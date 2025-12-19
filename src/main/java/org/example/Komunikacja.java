@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Komunikacja {
     private String text;
     public Komunikacja(String text) {
@@ -16,6 +19,20 @@ public class Komunikacja {
             if (licznik>4){
                 return i;
             }
+        }
+        return -1;
+    }
+    public int marker14(){
+        int licznik =0;
+        for (int i = 0; i < text.length()-14; i++) {
+            Set<Character> set = new HashSet<>();
+            for (int j = i; j < i+14; j++) {
+                set.add(text.charAt(j));
+            }
+            if (set.size()==14){
+                return i+14;
+            }
+
         }
         return -1;
     }
